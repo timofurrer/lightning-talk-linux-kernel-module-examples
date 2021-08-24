@@ -30,6 +30,9 @@ static struct sample_sysctl_settings {
     int value;
 } sample_sysctl_settings;
 
+static int default_value;
+module_param(default_value, int, 0);
+
 static int sample_sysctl_handler(struct ctl_table *ctl, int write, void __user *buffer, size_t *length, loff_t *offset) {
     int ret = proc_dointvec(ctl, write, buffer, length, offset);
     return ret;
@@ -56,7 +59,8 @@ static struct ctl_table sample_root_table[] = {
 
 static int __init sysctl_var_init(void) {
     sample_sysctl_header = register_sysctl_table(sample_root_table);
-    sample_sysctl_settings.value = 0;
+    sample_sysctl_settings.value = default_value;
+    pr_info("Loaded with default sample value %d\n", sample_sysctl_settings.value);
     return 0;
 }
 
