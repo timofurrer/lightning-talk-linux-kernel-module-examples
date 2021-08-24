@@ -1,0 +1,11 @@
+# vim swap files
+*.swp
+
+# kernel module build artifacts
+*.o
+*.cmd
+*.mod
+*.mod.c
+*.symvers
+*.order
+*.ko
