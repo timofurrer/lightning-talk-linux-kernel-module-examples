@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-MODULE_LICENSE("MIT");
+MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Timo Furrer");
 MODULE_DESCRIPTION("Hello World Kernel Module");
 MODULE_VERSION("0.01");
